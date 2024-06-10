@@ -1,0 +1,66 @@
+﻿@using bookshop.ViewModel
+@model CreateBookVM
+@section Title {
+	Books
+}
+@section Subtitel {
+	Create
+}
+<form asp-controller="book" asp-action="Create" enctype="multipart/form-data" >
+    <div class="card-body">
+        <div class="mb-3">
+            <label asp-for="Titel"></label>
+            <input type="text" class="form-control w-75" asp-for="Titel">
+            <span asp-validation-for="Titel" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="AutherID"></label>
+     
+            <select asp-for="AutherID" asp-items="@Model.Auther" class="form-control w-75"></select>
+            <span asp-validation-for="AutherID" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Publisher"></label>
+            <input type="text" class="form-control w-75" asp-for="Publisher">
+            <span asp-validation-for="Publisher" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="PublishDate"></label>
+            <input type="date" class="form-control w-75" asp-for="PublishDate">
+            <span asp-validation-for="PublishDate" class="text-danger"></span>
+
+        </div>
+       
+        <div class="mb-3">
+            <label asp-for=" ImgURL"></label>
+            <input type="file" class="form-control w-75" asp-for=" ImgURL">
+            <span asp-validation-for=" ImgURL" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="SelectedCategory"></label>
+            <select asp-for="SelectedCategory" asp-items="@Model.Category" class="form-control w-75"></select>
+            <span asp-validation-for="SelectedCategory" class="text-danger"></span>
+
+        </div>
+        
+
+
+        <button type="submit" class="btn btn-primary">
+
+           Add
+        </button>
+    </div>
+
+
+
+</form>
